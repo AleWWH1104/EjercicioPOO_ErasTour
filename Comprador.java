@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 public class Comprador {
     //Declaracion de variables 
-    public String nombre;
-    public String email;
-    public Integer cant_boletos;
-    public Double presupuesto;
+    private String nombre;
+    private String email;
+    private Integer cant_boletos;
+    private Double presupuesto;
+    private Double costoTotal;
+    private String localidadComprador;
 
     public void informacion(){
         Scanner in = new Scanner(System.in);
@@ -19,6 +21,13 @@ public class Comprador {
 		presupuesto = in.nextDouble();
     }
 
+    public Comprador(String nombre, String email, Integer cant_boletos, Double costoTotal, String localidadComprador) {
+        this.nombre = nombre;
+        this.email = email;
+        this.cant_boletos = cant_boletos;
+        this.costoTotal = costoTotal;
+        this.localidadComprador = localidadComprador;
+    }
     
 }
 
