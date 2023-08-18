@@ -50,6 +50,9 @@ public class Localidad {
             System.out.println("Tu presupuesto no es suficiente para comprar los boletos.");
             return;
         }
+        actualizarEspacios(LocalidadSeleccionada, VenderBoleto);
+        System.out.println("¡Compra exitosa! Has comprado " + VenderBoleto + " boletos en " + LocalidadSeleccionada + ". Total: $" + costoTotal);
+   
    } 
 
     private Integer obtenerEspaciosDisponibles(String localidad){
@@ -73,6 +76,16 @@ public class Localidad {
             return PrecioLocalidad10;
         } else {
             return 0.00;
+        }
+    }
+
+    private void actualizarEspacios(String localidad, int boletosVendidos) {
+        if ("Localidad 1".equals(localidad)) {
+            EspacioLocalidad1 -= boletosVendidos;
+        } else if ("Localidad 5".equals(localidad)) {
+            EspacioLocalidad5 -= boletosVendidos;
+        } else if ("Localidad 10".equals(localidad)) {
+            EspacioLocalidad10 -= boletosVendidos;
         }
     }
   
