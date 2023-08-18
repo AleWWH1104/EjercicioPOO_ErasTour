@@ -2,11 +2,15 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Localidad {
+    public String LocalidadSeleccionada;
     //Declarar los espacios de cada localidad
     public Integer EspacioLocalidad1 = 20;
     public Integer EspacioLocalidad5 = 20;
     public Integer EspacioLocalidad10 = 20;
-    public String LocalidadSeleccionada;
+    //Declarar los precios por localidad
+    public Double PrecioLocalidad1 = 100.00;
+    public Double PrecioLocalidad5 = 500.00;
+    public Double PrecioLocalidad10 = 1000.00;
 
     public void localidadAleatoria(){
         ArrayList<String> localidadE = new ArrayList<String>();
@@ -27,20 +31,49 @@ public class Localidad {
 
     //Realizar todas las validaciones
     public void comprarBoleto(int cant_boletos, double presupuesto){
-        int espaciosDisponibles = 0;
-        if (LocalidadSeleccionada == "Localidad 1"){
-            espaciosDisponibles = EspacioLocalidad1;
-        } else if (LocalidadSeleccionada == "Localidad 5"){
-            espaciosDisponibles = EspacioLocalidad5;
-        } else if (LocalidadSeleccionada == "Localidad 10"){
-            espaciosDisponibles = EspacioLocalidad10;
+        //Segun la localidad se ejecuta toda la funcion
+        Integer espaciosDisponibles = obtenerEspaciosDisponibles(LocalidadSeleccionada);
+        Double precioBoleto = obtenerPrecio(LocalidadSeleccionada);
+
+        //Primera validacion
+        if (espaciosDisponibles == 0) {
+            System.out.println("Lo sentimos, no hay espacios disponibles.");
+            return; //Se sale de la funcion al no cumplir con esta condicion
         }
-        if (espaciosDisponibles == 0){
-            System.out.println("Lo sentimos, no hay espacios disponibles");
+
+        //Segunda validacion
+        int VenderBoleto = Math.min(cant_boletos, espaciosDisponibles);
+        Double costoTotal = VenderBoleto * precioBoleto;
+
+        //Tercera validacion 
+        if (costoTotal > presupuesto){
+            System.out.println("Tu presupuesto no es suficiente para comprar los boletos.");
+            return;
         }
-        
+   } 
 
+    private Integer obtenerEspaciosDisponibles(String localidad){
+        if ("Localidad 1".equals(localidad)) {
+            return EspacioLocalidad1;
+        } else if ("Localidad 5".equals(localidad)) {
+            return EspacioLocalidad5;
+        } else if ("Localidad 10".equals(localidad)) {
+            return EspacioLocalidad10;
+        } else {
+            return 0;
+        }
+    }
 
-    
-
+    private Double obtenerPrecio(String localidad) {
+        if ("Localidad 1".equals(localidad)) {
+            return PrecioLocalidad1;
+        } else if ("Localidad 5".equals(localidad)) {
+            return PrecioLocalidad5;
+        } else if ("Localidad 10".equals(localidad)) {
+            return PrecioLocalidad10;
+        } else {
+            return 0.00;
+        }
+    }
+  
 }
