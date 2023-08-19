@@ -58,8 +58,12 @@ public class Localidad {
         ingresosGenerados += costoTotal;
         actualizarEspacios(LocalidadSeleccionada, VenderBoleto);
         System.out.println("¡Compra exitosa! Has comprado " + VenderBoleto + " boletos en " + LocalidadSeleccionada + ". Total: $" + costoTotal);
-   
-   } 
+    } 
+
+    // Getter para obtener los ingresos generados
+    public Double obtenerIngresosGenerados() {
+        return ingresosGenerados;
+    }
 
     private Integer obtenerEspaciosDisponibles(String localidad){
         if ("Localidad 1".equals(localidad)) {
@@ -94,10 +98,4 @@ public class Localidad {
             EspacioLocalidad10 -= boletosVendidos;
         }
     }
-
-    private void ReporteDCaja(){
-        System.out.println("Reporte de Caja");
-        System.out.println("Ingresos generados: $" + ingresosGenerados);
-    }
-  
 }

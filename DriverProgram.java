@@ -1,7 +1,12 @@
 import java.util.Scanner;
 
 public class DriverProgram {
-    Comprador Listacomprador;
+    private Localidad localidad; //instancia de Localidad
+
+    public DriverProgram() {
+        localidad = new Localidad();
+    }
+
     public void MostrarMenu(){
         String opcion = "";
         do{
@@ -27,7 +32,7 @@ public class DriverProgram {
 			} else if (opcion.equals("4")) {
 				
 			} else if (opcion.equals("5")) {
-				
+				ReporteDCaja();
 			}else if (opcion.equals("6")) {
 				
 			}else if (opcion.equals("7")) {
@@ -47,8 +52,12 @@ public class DriverProgram {
 		Integer cant_boletos = in.nextInt();
         System.out.println("Ingrese su presupuesto");
 		Double presupuesto = in.nextDouble();
+    }
 
-
+    private void ReporteDCaja(){
+        Double ingresosGenerados = localidad.obtenerIngresosGenerados();
+        System.out.println("Reporte de Caja");
+        System.out.println("Ingresos generados: $" + ingresosGenerados);
     }
 
 }
