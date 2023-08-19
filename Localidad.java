@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+
 public class Localidad {
     public String LocalidadSeleccionada;
     //Declarar los espacios de cada localidad
@@ -11,6 +12,9 @@ public class Localidad {
     public Double PrecioLocalidad1 = 100.00;
     public Double PrecioLocalidad5 = 500.00;
     public Double PrecioLocalidad10 = 1000.00;
+
+
+    
 
     //Reporte de caja
     Double ingresosGenerados = 0.00;
@@ -60,6 +64,27 @@ public class Localidad {
         System.out.println("¡Compra exitosa! Has comprado " + VenderBoleto + " boletos en " + LocalidadSeleccionada + ". Total: $" + costoTotal);
     } 
 
+
+    public void comprarBoletoEspecial(CodigoEspecial codigo) {
+        if (hayEspacioEspecial()) {
+            Double costoEspecial = 20000.00;
+
+            if (codigo.getCodigo() != 0) {
+                EspacioLocalidad10--;
+                ingresosGenerados += costoEspecial;
+                System.out.println("Compra de Boleto Especial - Has comprado 1 boleto en Localidad 10 (Especial). Total: $" + costoEspecial);
+            } else {
+                System.out.println("El código especial no es válido.");
+            }
+        } else {
+            System.out.println("Lo sentimos, no hay espacios disponibles para la compra especial en Localidad 10.");
+        }
+    }
+    public int obtenerBoletosVendidosEspeciales() {
+        return 20 - EspacioLocalidad10;
+    }
+
+
     // Getter para obtener los ingresos generados
     public Double obtenerIngresosGenerados() {
         return ingresosGenerados;
@@ -87,6 +112,10 @@ public class Localidad {
         } else {
             return 0.00;
         }
+    }
+
+    private boolean hayEspacioEspecial() {
+        return EspacioLocalidad10 > 0;
     }
 
     private void actualizarEspacios(String localidad, int boletosVendidos) {
