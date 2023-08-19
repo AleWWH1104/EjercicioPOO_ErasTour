@@ -13,9 +13,6 @@ public class Localidad {
     public Double PrecioLocalidad5 = 500.00;
     public Double PrecioLocalidad10 = 1000.00;
 
-
-    
-
     //Reporte de caja
     Double ingresosGenerados = 0.00;
 
@@ -84,13 +81,12 @@ public class Localidad {
         return 20 - EspacioLocalidad10;
     }
 
-
     // Getter para obtener los ingresos generados
     public Double obtenerIngresosGenerados() {
         return ingresosGenerados;
     }
 
-    private Integer obtenerEspaciosDisponibles(String localidad){
+    public Integer obtenerEspaciosDisponibles(String localidad){
         if ("Localidad 1".equals(localidad)) {
             return EspacioLocalidad1;
         } else if ("Localidad 5".equals(localidad)) {
