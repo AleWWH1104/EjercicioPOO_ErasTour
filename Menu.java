@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Menu{
     public static void main(String[] args) {
-        SolicitarCompraBoleto solicitarBoleto = new SolicitarCompraBoleto();
+        //SolicitarCompraBoleto solicitarBoleto = new SolicitarCompraBoleto();
         Localidad localidad = new Localidad();
 
         Scanner in = new Scanner(System.in);

@@ -9,6 +9,9 @@ public class Comprador {
     private Double costoTotal;
     private String localidadComprador;
 
+    // variable para ticket
+    private Ticket ticket;
+
     public void informacion(){
         Scanner in = new Scanner(System.in);
         System.out.println("Ingrese su nombre");
@@ -27,6 +30,9 @@ public class Comprador {
         this.cant_boletos = cant_boletos;
         this.costoTotal = costoTotal;
         this.localidadComprador = localidadComprador;
+
+        // instancia de ticket
+        ticket = new Ticket();
     }
     
 }
