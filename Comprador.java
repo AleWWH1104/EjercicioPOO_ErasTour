@@ -6,7 +6,11 @@ public class Comprador {
     private Integer cant_boletos;
     private Double presupuesto;
 
+    private Ticket ticket;
+    
+
     public Comprador() {
+        ticket = new Ticket();
     }
 
     public void informacion() {
@@ -36,5 +40,9 @@ public class Comprador {
 
     public Double getPresupuesto() {
         return presupuesto;
+    }
+
+    public Ticket getTicket() {
+        return ticket;
     }
 }

@@ -5,7 +5,7 @@ public class CodigoEspecial {
         if (isFibonacci(codigo)) {
             this.codigo = codigo;
         } else {
-            System.out.println("El Codigo Especial no es válido.");
+            System.out.println("El Codigo Especial NO es válido.");
         }
     }
 

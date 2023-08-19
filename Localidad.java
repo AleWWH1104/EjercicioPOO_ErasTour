@@ -13,8 +13,6 @@ public class Localidad {
     public Double PrecioLocalidad5 = 500.00;
     public Double PrecioLocalidad10 = 1000.00;
 
-    // cosas de la compra especia
-    private int boletosVendidosEspeciales = 0;
 
     
 
@@ -74,7 +72,7 @@ public class Localidad {
             if (codigo.getCodigo() != 0) {
                 EspacioLocalidad10--;
                 ingresosGenerados += costoEspecial;
-                System.out.println("¡Compra especial exitosa! Has comprado 1 boleto en Localidad 10 (Especial). Total: $" + costoEspecial);
+                System.out.println("Compra de Boleto Especial - Has comprado 1 boleto en Localidad 10 (Especial). Total: $" + costoEspecial);
             } else {
                 System.out.println("El código especial no es válido.");
             }
