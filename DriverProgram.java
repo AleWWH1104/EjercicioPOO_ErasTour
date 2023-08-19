@@ -59,5 +59,10 @@ public class DriverProgram {
         System.out.println("Reporte de Caja");
         System.out.println("Ingresos generados: $" + ingresosGenerados);
     }
+    public static void main(String[] args) {
+        //SolicitarCompraBoleto solicitarBoleto = new SolicitarCompraBoleto();
+        DriverProgram hola = new DriverProgram();
+        hola.MostrarMenu();
+    }
 
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.util.Scanner;
 
 public class Menu{
@@ -13,5 +12,3 @@ public class Menu{
         
     }
 }
-=======
->>>>>>> 1db623092cf83736dc7923589e7bdc459c83cdd3
