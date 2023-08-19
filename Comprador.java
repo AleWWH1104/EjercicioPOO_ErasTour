@@ -8,9 +8,17 @@ public class Comprador {
 
     private Ticket ticket;
     
+    private String localidadSeleccionada;
 
     public Comprador() {
         ticket = new Ticket();
+    }
+
+    public String getLocalidadSeleccionada() {
+        return localidadSeleccionada;
+    }
+    public void setLocalidadSeleccionada(String localidadSeleccionada) {
+        this.localidadSeleccionada = localidadSeleccionada;
     }
 
     public void informacion() {

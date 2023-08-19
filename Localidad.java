@@ -16,7 +16,7 @@ public class Localidad {
     //Reporte de caja
     Double ingresosGenerados = 0.00;
 
-    public void localidadAleatoria(){
+    public void localidadAleatoria(Comprador comprador){
         ArrayList<String> localidadE = new ArrayList<String>();
         //Agregar las opciones de localidad al Arraylist
         localidadE.add("Localidad 1");
@@ -31,6 +31,8 @@ public class Localidad {
         LocalidadSeleccionada = localidadE.get(indiceAleatorio);
         System.out.println("Localidad seleccionada aleatoriamente: " + LocalidadSeleccionada);
     
+        // Configurar la localidad seleccionada en el objeto comprador
+        comprador.setLocalidadSeleccionada(LocalidadSeleccionada);
     }
 
     //Realizar todas las validaciones

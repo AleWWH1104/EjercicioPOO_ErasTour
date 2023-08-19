@@ -56,13 +56,15 @@ public class Menu {
 
     private void realizarCompraNormal(Localidad localidad, Scanner in) {
         Comprador comprador = new Comprador();
-        
+        comprador.informacion();
+
+        localidad.localidadAleatoria(comprador); // Seleccionar una localidad aleatoria
         // Verificar si el ticket es válido para la compra de boletos
         if (!comprador.getTicket().isValidForPurchase()) {
             System.out.println("Lo sentimos, el ticket no es valido para esta compra.");
             return;
         }
-        localidad.localidadAleatoria(); // Seleccionar una localidad aleatoria
+        //localidad.localidadAleatoria(); // Seleccionar una localidad aleatoria
         localidad.comprarBoleto(comprador.getCantBoletos(), comprador.getPresupuesto());
     }
     
