@@ -33,6 +33,7 @@ public class Menu {
         comprador.informacion();
 
         // Implementar la lógica de compra normal aquí usando el objeto 'localidad' y 'comprador'
+        localidad.comprarBoleto(comprador.getCantBoletos(), comprador.getPresupuesto());
     }
 
     private void realizarCompraEspecial(Localidad localidad, Scanner in) {
@@ -45,6 +46,7 @@ public class Menu {
             System.out.println("¡Código especial válido!");
 
             // Implementar compra especial
-
+            localidad.comprarBoletoEspecial(codigo);
+        }
     }
 }
