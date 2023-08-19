@@ -1,7 +1,14 @@
 import java.util.Scanner;
-
+/**
+ * Esta clase representa el menú de opciones para interactuar con el sistema de compra de boletos.
+ */
 public class Menu {
-    //Localidad localidad = new Localidad();
+    /**
+     * Muestra el menú de opciones y gestiona las interacciones del usuario.
+     *
+     * @param localidad La instancia de Localidad utilizada para gestionar la disponibilidad y compra de boletos.
+     * @param in El objeto Scanner para recibir entradas del usuario.
+     */
     public void mostrarMenu(Localidad localidad, Scanner in) {
         System.out.println("Bienvenido a la compra de boletos para Eras Tour");
         
@@ -64,7 +71,6 @@ public class Menu {
             System.out.println("Lo sentimos, el ticket no es valido para esta compra.");
             return;
         }
-        //localidad.localidadAleatoria(); // Seleccionar una localidad aleatoria
         localidad.comprarBoleto(comprador.getCantBoletos(), comprador.getPresupuesto());
     }
     

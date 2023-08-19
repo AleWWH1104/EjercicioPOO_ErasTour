@@ -1,26 +1,44 @@
 import java.util.Scanner;
 
+/**
+ * Esta clase representa un comprador que interactúa con el sistema de compra de boletos.
+ */
 public class Comprador {
     private String nombre;
     private String email;
     private Integer cant_boletos;
     private Double presupuesto;
-
     private Ticket ticket;
-    
     private String localidadSeleccionada;
 
+    /**
+     * Constructor de la clase Comprador que inicializa una instancia de Ticket.
+     */
     public Comprador() {
         ticket = new Ticket();
     }
 
+    /**
+     * Obtiene la localidad seleccionada por el comprador.
+     *
+     * @return La localidad seleccionada por el comprador.
+     */
     public String getLocalidadSeleccionada() {
         return localidadSeleccionada;
     }
+
+    /**
+     * Establece la localidad seleccionada por el comprador.
+     *
+     * @param localidadSeleccionada La localidad seleccionada por el comprador.
+     */
     public void setLocalidadSeleccionada(String localidadSeleccionada) {
         this.localidadSeleccionada = localidadSeleccionada;
     }
 
+    /**
+     * Solicita al comprador que ingrese su información.
+     */
     public void informacion() {
         Scanner in = new Scanner(System.in);
         System.out.println("Ingrese su nombre:");
@@ -33,7 +51,7 @@ public class Comprador {
         presupuesto = in.nextDouble();
     }
 
-    // getters
+    // Getters para los atributos del comprador
     public String getNombre() {
         return nombre;
     }
@@ -50,6 +68,11 @@ public class Comprador {
         return presupuesto;
     }
 
+    /**
+     * Obtiene el ticket asociado al comprador.
+     *
+     * @return El ticket asociado al comprador.
+     */
     public Ticket getTicket() {
         return ticket;
     }

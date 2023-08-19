@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
-
-
+/**
+ * Esta clase representa la gestión de las localidades y la compra de boletos.
+ */
 public class Localidad {
     public String LocalidadSeleccionada;
     //Declarar los espacios de cada localidad
@@ -16,6 +17,11 @@ public class Localidad {
     //Reporte de caja
     Double ingresosGenerados = 0.00;
 
+    /**
+     * Selecciona aleatoriamente una localidad para el comprador y la configura en su objeto.
+     *
+     * @param comprador El comprador al que se le asignará la localidad.
+     */
     public void localidadAleatoria(Comprador comprador){
         ArrayList<String> localidadE = new ArrayList<String>();
         //Agregar las opciones de localidad al Arraylist
@@ -79,6 +85,12 @@ public class Localidad {
             System.out.println("Lo sentimos, no hay espacios disponibles para la compra especial en Localidad 10.");
         }
     }
+
+    /**
+     * Realiza la compra de un boleto especial con un código especial.
+     *
+     * @param codigo El código especial proporcionado para la compra.
+     */
     public int obtenerBoletosVendidosEspeciales() {
         return 20 - EspacioLocalidad10;
     }
@@ -88,6 +100,12 @@ public class Localidad {
         return ingresosGenerados;
     }
 
+    /**
+     * Obtiene la cantidad de espacios disponibles en una localidad específica.
+     *
+     * @param localidad La localidad para la que se obtendrá la cantidad de espacios disponibles.
+     * @return La cantidad de espacios disponibles en la localidad especificada.
+     */
     public Integer obtenerEspaciosDisponibles(String localidad){
         if ("Localidad 1".equals(localidad)) {
             return EspacioLocalidad1;
@@ -99,7 +117,12 @@ public class Localidad {
             return 0;
         }
     }
-
+    /**
+     * Obtiene el precio de un boleto según la localidad.
+     *
+     * @param localidad La localidad para la que se obtendrá el precio del boleto.
+     * @return El precio del boleto para la localidad especificada.
+     */
     private Double obtenerPrecio(String localidad) {
         if ("Localidad 1".equals(localidad)) {
             return PrecioLocalidad1;
@@ -112,10 +135,21 @@ public class Localidad {
         }
     }
 
+    /**
+     * Verifica si hay espacios disponibles en la localidad 10 para la compra especial.
+     *
+     * @return true si hay espacios disponibles, false de lo contrario.
+     */
     private boolean hayEspacioEspecial() {
         return EspacioLocalidad10 > 0;
     }
 
+    /**
+     * Actualiza la cantidad de espacios disponibles en una localidad después de una venta.
+     *
+     * @param localidad La localidad en la que se actualizarán los espacios disponibles.
+     * @param boletosVendidos El número de boletos vendidos en esta transacción.
+     */
     private void actualizarEspacios(String localidad, int boletosVendidos) {
         if ("Localidad 1".equals(localidad)) {
             EspacioLocalidad1 -= boletosVendidos;
