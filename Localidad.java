@@ -12,6 +12,9 @@ public class Localidad {
     public Double PrecioLocalidad5 = 500.00;
     public Double PrecioLocalidad10 = 1000.00;
 
+    //Reporte de caja
+    Double ingresosGenerados = 0.00;
+
     public void localidadAleatoria(){
         ArrayList<String> localidadE = new ArrayList<String>();
         //Agregar las opciones de localidad al Arraylist
@@ -50,6 +53,9 @@ public class Localidad {
             System.out.println("Tu presupuesto no es suficiente para comprar los boletos.");
             return;
         }
+
+        //Acumular los ingresos para el reporte de caja
+        ingresosGenerados += costoTotal;
         actualizarEspacios(LocalidadSeleccionada, VenderBoleto);
         System.out.println("¡Compra exitosa! Has comprado " + VenderBoleto + " boletos en " + LocalidadSeleccionada + ". Total: $" + costoTotal);
    
@@ -87,6 +93,11 @@ public class Localidad {
         } else if ("Localidad 10".equals(localidad)) {
             EspacioLocalidad10 -= boletosVendidos;
         }
+    }
+
+    private void ReporteDCaja(){
+        System.out.println("Reporte de Caja");
+        System.out.println("Ingresos generados: $" + ingresosGenerados);
     }
   
 }
