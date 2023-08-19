@@ -1,14 +1,11 @@
-import java.util.Scanner;
-
 public class Comprador {
     //Declaracion de variables 
     private String nombre;
     private String email;
     private Integer cant_boletos;
     private Double presupuesto;
-    private Double costoTotal;
-    private String localidadComprador;
 
+<<<<<<< HEAD
     // variable para ticket
     private Ticket ticket;
 
@@ -33,6 +30,12 @@ public class Comprador {
 
         // instancia de ticket
         ticket = new Ticket();
+=======
+    public Comprador(String nombre, String email, Integer cant_boletos) {
+        this.nombre = nombre;
+        this.email = email;
+        this.cant_boletos = cant_boletos;
+>>>>>>> 1db623092cf83736dc7923589e7bdc459c83cdd3
     }
     
 }
