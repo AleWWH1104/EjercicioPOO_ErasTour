@@ -6,14 +6,8 @@ public class Comprador {
     private Integer cant_boletos;
     private Double presupuesto;
 
-<<<<<<< HEAD
     // variable para ticket
     private Ticket ticket;
-=======
-    private Ticket ticket;
-    
-
->>>>>>> 44491cb40c621cfbc15d5d1b4fd9321ee6f25133
     public Comprador() {
         ticket = new Ticket();
     }
